@@ -14,7 +14,7 @@ import os
 import pandas as pd
 import numpy as np
 from bokeh.plotting import figure, save, output_file
-from bokeh.models import ColumnDataSource, CustomJS, DataTable, TableColumn, RangeSlider, HoverTool, TapTool, BoxSelectTool, MultiSelect, LinearColorMapper, ColorBar, BasicTicker, Paragraph
+from bokeh.models import ColumnDataSource, CustomJS, DataTable, TableColumn, RangeSlider, HoverTool, TapTool, BoxSelectTool, MultiSelect, LinearColorMapper, ColorBar, BasicTicker, Paragraph, Div
 from bokeh.models.widgets import TextInput, Button
 from bokeh.layouts import column, row, gridplot, Spacer
 from bokeh.embed import file_html
@@ -281,7 +281,7 @@ def load_data(file_path, sheet_name=0, alpha = 0.05, dfn = 10, dfd = 10, loc = 0
     return source
 
 
-def make_histogram(source=None, hist_col='', width=200, height=800, visible=False, tools="", toolbar_location=None, title="", x_axis_label='', y_axis_label='', min_border=0, **kwargs):
+def make_histogram(source=None, hist_col='', width=200, height=800, visible=True, tools="", toolbar_location=None, title="", x_axis_label='', y_axis_label='', min_border=0, **kwargs):
     """
     Create a horizontal histogram visualization for protein abundance data.
 
@@ -502,7 +502,7 @@ def create_interactive_dashboard(source, peptides_file=None, l2fc_col='', pAdj_c
             peptide_columns = list(peptides_df.columns)  # Default to all columns if not specified
         else:
             # Define column widths in order (first column = 80px, second = 120px, etc.)
-            peptide_column_widths = [60, 300, 70, 40, 30, 200, 40, 60]
+            peptide_column_widths = [60, 260, 70, 40, 30, 140, 90, 110]
             default_width = 10
 
             # Create table columns with specified widths
@@ -532,7 +532,7 @@ def create_interactive_dashboard(source, peptides_file=None, l2fc_col='', pAdj_c
     # Create the main volcano plot
     plot1 = figure(
         height=800, width=400, title=volcano_title,
-        x_axis_label="filter log2 fold change values", y_axis_label="Filter -log10 adjusted p-values",
+        x_axis_label="log2 fold change values", y_axis_label="-log10 adjusted p-values",
         tools=volcano_tools, toolbar_location="below", visible=True)
 
     # Add hover tool with tooltips
@@ -941,9 +941,15 @@ def create_interactive_dashboard(source, peptides_file=None, l2fc_col='', pAdj_c
     # Arrange data tables and their titles in a column
     tables_col = column(data_table_title, data_table, Spacer(height=20), peptides_table_title, peptides_table)
 
+    # Create a hyperlink using Div
+    footer = Div(text='<p style="text-align:left;"><a href="https://nara3m.github.io/shanti" target="_blank">User Guide</a>. Cite: Marella, N. (2025) Shanti <a href=" https://doi.org/10.5281/zenodo.15307776" target="_blank">doi.org/10.5281/zenodo.15307776</a></p>', width=800, height=30)
+
     # Combine all elements into the final layout
     # The layout is organized as: plots and histograms on the left, tables on the right
-    layout = row(plot1_col, hist_plots_col, Spacer(width=20), tables_col)
+    layout = column(
+        row(plot1_col, hist_plots_col, Spacer(width=20), tables_col),
+        Spacer(height=50),
+        footer)
 
     # Output to standalone HTML file
     # Parameters:
@@ -955,5 +961,7 @@ def create_interactive_dashboard(source, peptides_file=None, l2fc_col='', pAdj_c
     # Save the layout to the HTML file
     # INLINE resources parameter ensures all JavaScript and CSS is embedded in the HTML
     save(layout, resources=INLINE)
+
+    print(f"✅{output_path} created succesfully!")
 
     return output_path
