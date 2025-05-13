@@ -59,17 +59,10 @@ source = load_data(
 creates histograms of the control and treated sample groups. The bin sizes are set to 20 but can be adjusted in the source code
 
 ```python
-hist1, hist1_data_filtered, hist1_bin_edges_log, hist1_bottoms, hist1_bar_height = make_histogram(
+hist, data_filtered, bin_edges_log, bottoms, bar_height = make_histogram(
     source=source,
     hist_col="AN_KO_Mean",
     title="KO dTAG",
-    x_axis_label="protein count"
-)
-
-hist2, hist2_data_filtered, hist2_bin_edges_log, hist2_bottoms, hist2_bar_height = make_histogram(
-    source,
-    hist_col="AN_WT_Mean",
-    title="DMSO",
     x_axis_label="protein count"
 )
 ```
