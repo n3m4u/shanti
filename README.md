@@ -4,6 +4,17 @@ create **SH**arable, interactive, st**AN**dalone html dashboard from **T**abular
 
 **Shanti** is a Python library for creating interactive, standalone HTML dashboards from proteomics data (specifically tabular data in Excel format). This package simplifies the process of creating volcano plots and histograms. This tool uses [Bokeh](https://bokeh.org) library in the background to generate a HTML file that contains interactive plots and tables. The HTML files can be opened in a browser (Firefox, Chrome, Safari, Edge) and shared with colleagues. Your colleagues can explore proteomics data with without requiring any server or software installation. This tool is relevant for Mass Spectrometry Core Facilities to create protoemics reports for clients. This tool is conceptualized, designed, built, documented and published by [Nara Marella](https://github.com/nara3m) at the Molecular Discovery Platform of [CeMM](https://cemm.at) Research Center for Molecular Medicine of the Austrian Academy of Sciences, Vienna
 
+Table of Contents
+
+1. [Installation](#installation)
+2. [Key Components](#key-components)
+3. [Input Files Required](#input-files-required)
+4. [Usage](#usage)
+5. [Final Output](#final-output)
+6. [FAQ][#faq]
+7. [Cite](#cite)
+
+
 ## 📦 Installation
 
 You can install the package with pip:
@@ -110,11 +121,12 @@ create_interactive_dashboard(
 - `hist1_col` and `hist2_col` were explained in `make_histogram()` function
 - `plot2`, `plot3`, `hist1_data_filtered`, `hist2_data_filtered`, `hist1_bin_edges_log`, `hist2_bin_edges_log`, `hist1_bottoms`, `hist2_bottoms`, `hist1_bar_height`, `hist2_bar_height` are outputs of `make_histogram()` function
 
-### `DataProcessor()` is the internal Class that handles
+### `DataProcessor()` 
+
+internal Class that handles
 
 - Statistical calculations specifically for protein level data
 - Classification of volcano data points based on significance thresholds
-- Creation of histograms for protein abundance visualization
 
 ## 📂 Input Files Required
 1. Protein data Excel file (e.g. [Shanti_Test_Proteins.xlsx](https://zenodo.org/records/15307776/files/Shanti_Test_Proteins.xlsx?download=1))
@@ -209,5 +221,5 @@ To extend or modify this tool:
 ## 📬 Questions?
 Feel free to open an [issue](https://github.com/n3m4u/shanti/issues) or reach out with feedback!
 
-## Cite:
+## Cite
 Marella, N. (2025). Shanti: create SHarable, interactive, stANdalone html dashboard from Tabular proteomIcs data (v0.1.1). Zenodo. [doi.org/10.5281/zenodo.15307776](https://doi.org/10.5281/zenodo.15307776)
