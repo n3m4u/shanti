@@ -68,7 +68,7 @@ hist, data_filtered, bin_edges_log, bottoms, bar_height = make_histogram(
 ```
 
 - `source` is output of `load_data()` function
-- `hist_col` is the name of the column containing abundance (or normalized abundances). The numerator in the fold change ratio is usually the first histogram `hist1`. In example dataset, column `AN_KO_Mean` is used for first histogram. `KO` meaning KnockOut or Treatment Group. The denominator in the fold change ratio is usually the second histogram `hist2`. In example dataset, column `AN_WT_Mean` is used for second histogram. `WT` meaning WildType or Control Group
+- `hist_col` is the name of the column containing abundance (or normalized abundances). The numerator in the fold change ratio is usually the first histogram (for example, call it `hist1` instead of `hist`). In example dataset, column `AN_KO_Mean` is used for first histogram. `KO` meaning KnockOut or Treatment Group. The denominator in the fold change ratio is usually the second histogram (for example, call it `hist2` instead of `hist`). In example dataset, column `AN_WT_Mean` is used for second histogram. `WT` meaning WildType or Control Group
 - `title` is the `str` to diplay on top of Histogram in HTML output file. Default is no title
 - `x_axis_label` default is empty, but good to give a `str`
 
