@@ -29,10 +29,10 @@ source = load_data(
 )
 ```
 
-- `file_path` is the path to file containing Protein level data. See Shanti_Test_Proteins.xlsx for the format. Column `UniProtID` is mandatory and column name is hardcoded. Other column names are flexible. ⚠️ Avoid special characters or blank spaces in table column names of the input file because output HTML file does not parse special column names correctly
+- `file_path` is the path to file containing Protein level data. See [Shanti_Test_Proteins.xlsx](https://zenodo.org/records/15307776/files/Shanti_Test_Proteins.xlsx?download=1) for the format of Protein level data file. Column `UniProtID` is mandatory and column name is hardcoded. Other column names are flexible. ⚠️ Avoid special characters or blank spaces in table column names of the input file because output HTML file does not parse special column names correctly
 - `fc_lim` is the threshold for significance curve. Although a default value is defined, this parameter should be manually adjusted for each new run becasue of the unique data distribution of input. After trail and error, `0.25` was selected as the best value for column `KO_WT_l2FC` in demo dataset (Shanti_Test_Proteins.xlsx)
-- `l2fc_col` is the column name contining log2 fold change values. In demo dataset (Shanti_Test_Proteins.xlsx), column `KO_WT_l2FC` was used
-- `pAdj_col` is the column name contining adjusted P values. In demo dataset (Shanti_Test_Proteins.xlsx), column `KO_WT_pAdj` was used
+- `l2fc_col` is the column name contining log2 fold change values. In demo dataset ([Shanti_Test_Proteins.xlsx](https://zenodo.org/records/15307776/files/Shanti_Test_Proteins.xlsx?download=1)), column `KO_WT_l2FC` was used
+- `pAdj_col` is the column name contining adjusted P values. In demo dataset ([Shanti_Test_Proteins.xlsx](https://zenodo.org/records/15307776/files/Shanti_Test_Proteins.xlsx?download=1)), column `KO_WT_pAdj` was used
 
 #### with advanced parameters
 
@@ -68,7 +68,7 @@ hist, data_filtered, bin_edges_log, bottoms, bar_height = make_histogram(
 ```
 
 - `source` is output of `load_data()` function
-- `hist_col` is the name of the column containing abundance (or normalized abundances). The numerator in the fold change ratio is usually the first histogram (for example, call it `hist1` instead of `hist`). In example dataset, column `AN_KO_Mean` is used for first histogram. `KO` meaning KnockOut or Treatment Group. The denominator in the fold change ratio is usually the second histogram (for example, call it `hist2` instead of `hist`). In example dataset, column `AN_WT_Mean` is used for second histogram. `WT` meaning WildType or Control Group
+- `hist_col` is the name of the column containing abundance (or normalized abundances). The numerator in the fold change ratio is usually the first histogram (for example, call it `hist1` instead of `hist`). In example dataset [Shanti_Test_Proteins.xlsx](https://zenodo.org/records/15307776/files/Shanti_Test_Proteins.xlsx?download=1), column `AN_KO_Mean` is used for first histogram. `KO` meaning KnockOut or Treatment Group. The denominator in the fold change ratio is usually the second histogram (for example, call it `hist2` instead of `hist`). In example dataset, column `AN_WT_Mean` is used for second histogram. `WT` meaning WildType or Control Group
 - `title` is the `str` to diplay on top of Histogram in HTML output file. Default is no title
 - `x_axis_label` default is empty, but good to give a `str`
 
