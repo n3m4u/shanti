@@ -79,7 +79,7 @@ hist2, hist2_data_filtered, hist2_bin_edges_log, hist2_bottoms, hist2_bar_height
 - `title` is the `str` to diplay on top of Histogram in HTML output file. Default is no title
 - `x_axis_label` default is empty, but good to give a `str`
 
-### `create_interactive_dashboard()` 
+### 3. `create_interactive_dashboard()` 
 generates final output HTML file
 
 ```python
