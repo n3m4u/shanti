@@ -189,6 +189,8 @@ The result of `run.py` is a fully interactive HTML dashboard that can be opened 
 
 Detailed guide to understand output HTML file and perform interactive data exploration is available here: [nara3m.github.io/shanti](https://nara3m.github.io/shanti/index.html)
 
+![Demo output HTML file created with Test Datasets](https://github.com/nara3m/shanti/raw/refs/heads/main/img/kinase2.png)
+
 ## 🧑‍💻 For Developers
 To extend or modify this tool:
 
