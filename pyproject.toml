@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "shanti"
-version = "0.1.1"
+version = "0.1.2"
 description = "create SHarable, interactive, stANdalone html dashboard from Tabular proteomIcs data"
 authors = [
     { name = "Nara Marella" }

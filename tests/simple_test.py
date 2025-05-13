@@ -8,7 +8,7 @@ class TestShantiPackage(unittest.TestCase):
         # This test assumes a sample file is available; here we mock behavior
         try:
             df = load_data(
-                file_path="shanti/data/Shanti_Test_Proteins.xlsx",
+                file_path="Shanti_Test_Proteins.xlsx",
                 sheet_name=0,
                 alpha=0.05,
                 dfn=10,
@@ -28,7 +28,7 @@ class TestShantiPackage(unittest.TestCase):
         # Same here, we skip if file isn't available
         try:
             df = load_data(
-                file_path="shanti/data/Shanti_Test_Proteins.xlsx",
+                file_path="Shanti_Test_Proteins.xlsx",
                 sheet_name=0,
                 alpha=0.05,
                 dfn=10,
