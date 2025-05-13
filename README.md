@@ -158,7 +158,7 @@ create_interactive_dashboard(
     hist1_col="AN_KO_Mean",
     hist2_col="AN_WT_Mean",
     table_columns=["UniProtID", "Gene", "Description", "Peptides", "PeptidesU", "PSMs"],
-    peptides_file="shanti/data/Shanti_Test_PeptideGroups.xlsx",
+    peptides_file="Shanti_Test_PeptideGroups.xlsx",
     peptide_columns=["UniProtID", "Sequence", "ProteinGroups", "Proteins", "PSMs", "Position", "MissedCleavages", "QuanInfo"],
     output_path="dashboard.html"
     plot2=hist1,
