@@ -1,3 +1,3 @@
 # version.py
 # Put this file in the shanti directory
-__version__ = "0.1.2"
+__version__ = "0.1.3"
