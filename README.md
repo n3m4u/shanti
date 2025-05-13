@@ -11,8 +11,9 @@ Table of Contents
 3. [Input Files Required](#input-files-required)
 4. [Usage](#usage)
 5. [Final Output](#final-output)
-6. [FAQ][#faq]
-7. [Cite](#cite)
+6. [FAQ](#faq)
+7. [For Developers](#for-developers)
+8. [Cite](#cite)
 
 
 ## 📦 Installation
